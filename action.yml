@@ -17,6 +17,10 @@ inputs:
     description: Force function deployment
     required: false
     default: false
+  debug:
+    description: Show debug text 
+    required: false
+    default: false
 outputs:
   deploy-command:
     description: The command to be fed to the Firebase function deployer

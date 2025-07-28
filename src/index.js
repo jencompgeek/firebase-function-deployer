@@ -6,10 +6,11 @@ const mapfile = core.getInput("mapping-file");
 const files = core.getInput("files");
 const groups = core.getInput("groups");
 const names = core.getInput("names");
+const debug = core.getInput("debug");
 
 try {
-  const outputValue = run(force, mapfile, files, groups, names);
-  core.setOutput("deploy-command", outputValue);
+	const outputValue = run(force, mapfile, files, groups, names, debug);
+	core.setOutput("deploy-command", outputValue);
 } catch (error) {
-  core.setFailed(error.message);
+	core.setFailed(error.message);
 }
